@@ -1,0 +1,113 @@
+:root {
+    --primary: #6200EE;
+    --shadow: #ac92cf;
+}
+@keyframes itemShrink {
+    from {width: 100%;}
+    to {width: 0;}
+}
+* {
+    box-sizing: border-box;
+    font-family: Arial;
+}
+#layer {
+    max-width: 700px;
+    margin: auto;
+    padding: 10px;
+}
+#layer h1 {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary);
+    padding: 70px 10px;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 0 15px var(--shadow);
+    margin-bottom: 15px;
+}
+#layer .items {
+    background-color: #ddd;
+    padding: 30px;
+    text-align: left;
+    border-radius: 15px;
+    color: var(--primary);
+    box-shadow: 0 0 15px var(--shadow);
+    margin-bottom: 15px;
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: 94% 4%;
+}
+#layer .items span {
+    overflow: auto;
+}
+#layer .items div {
+    position: relative;
+}
+#layer .items div i {
+    position: absolute;
+    top: -6px;
+    font-size: 32px;
+    transition: color 0.5s;
+    color: black;
+}
+#layer .items div i:hover {
+    color: gray;
+}
+#layer .items div i:active {
+    font-size: 30px;
+}
+#layer #insert {
+    background-color: var(--primary);
+    padding: 40px 30px;
+    text-align: left;
+    border-radius: 15px;
+    box-shadow: 0 0 15px var(--shadow);
+    margin-bottom: 15px;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 79% 19%;
+    justify-content: space-between;
+}
+#layer #insert input {
+    border: 3.5px solid #ddd;
+    outline: none;
+    padding: 8px;
+    transition: border-color 0.5s, box-shadow 0.5s;
+}
+#layer #insert input:focus {
+    border-color: var(--shadow);
+    box-shadow: 0 0 10px var(--shadow);
+}
+#layer #insert button {
+    border-radius: 10px;
+    width: fit-content;
+    justify-self: center;
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: var(--primary);
+    box-shadow: 0 0 10px var(--shadow);
+    transition: background-color 0.2s;
+    font-family: Verdana;
+}
+#layer #insert button div {
+    border-bottom: 2px solid var(--primary);
+    width: 0;
+    transition: width 0.5s;
+}
+#layer #insert button:hover div {
+    width: 105%;
+}
+#layer #insert button:active {
+    background-color: #ddd;
+}
+@media (max-width:600px) {
+    #layer #insert {
+        grid-template-columns: 100%;
+        align-content: space-between;
+    }
+    #layer #insert button {
+        margin-top: 20px;
+    }
+}
